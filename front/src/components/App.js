@@ -9,16 +9,16 @@ import theme from "../styles";
 function App() {
   return (
         <>
-        
+
         <ThemeProvider theme={theme.light}>
         <CssBaseline />
-        <Container>
+
         <Router>
           <Switch>
             <Route exact path="/" component={Main} />
           </Switch>
         </Router>
-        </Container>
+       
         </ThemeProvider>
 
         </>
