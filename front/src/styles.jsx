@@ -108,11 +108,10 @@ export const components = {
     defaultProps: {
       variant: "outlined",
       sx: {
-        minWidth: "470px",
+        minWidth: "100px",
         borderRadius: "8px",
         backgroundColor: "primary.light",
-        marginTop: "1px",
-        marginBottom: "1px",
+        margin: "10px",
         height: "100px",
         display: "flex",
         flexDirection: "column",
@@ -141,7 +140,7 @@ export const components = {
   MuiCardMedia: {
     defaultProps: {
       sx: {
-        paddingTop: "56.25%", // 16:9
+        paddingTop: "100%", // 16:9
       },
     },
   },
