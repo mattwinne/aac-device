@@ -11,14 +11,13 @@ function App() {
         <>
 
         <ThemeProvider theme={theme.light}>
-        <CssBaseline />
+        <CssBaseline /> 
 
         <Router>
           <Switch>
             <Route exact path="/" component={Main} />
           </Switch>
         </Router>
-       
         </ThemeProvider>
 
         </>
