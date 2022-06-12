@@ -73,16 +73,6 @@ export const components = {
   },
   MuiContainer: {
     defaultProps: {
-      sx: {
-        marginTop: "100px",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        minHeight: "90%",
-        backgroundColor: "Colors.light",
-        width: "100%",
-        borderRadius: "8px",
-      },
     },
   },
   MuiToolbar: {
@@ -106,59 +96,40 @@ export const components = {
   },
   MuiCard: {
     defaultProps: {
-      variant: "outlined",
-      sx: {
-        minWidth: "100px",
-        borderRadius: "8px",
-        backgroundColor: "primary.light",
-        margin: "10px",
-        height: "100px",
-        display: "flex",
-        flexDirection: "column",
-        boxShadow: "0 1px 12px rgba(0, 0, 0, 0.25)",
-        border: "1px solid rgba(255, 255, 255, 0.3)",
-      },
-    },
+
+    }
   },
   MuiCardGrid: {
     defaultProps: {
       sx: {
-        height: "100px",
-        display: "flex",
-      },
+        
+      }
     },
   },
 
   MuiCardContent: {
     defaultProps: {
       sx: {
-        height: "100px",
-        display: "flex",
-      },
+
+      }
     },
   },
   MuiCardMedia: {
     defaultProps: {
-      sx: {
-        paddingTop: "100%", // 16:9
-      },
+      component: "img"
+      
+      
     },
   },
 
   MuiBox: {
     defaultProps: {
-      sx: {
-        width: "100%",
-        marginTop: "100px",
-        marginBottom: "100px",
-      },
     },
-    MuiTypography: {
-      defaultProps: {
-        sx: {
-          color: "txt",
-        },
-      },
+  },
+  MuiTypography: {
+    defaultProps: {
+      color: "txt",
+      variant:"p"
     },
   },
 };
