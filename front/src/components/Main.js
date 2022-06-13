@@ -15,10 +15,11 @@ function Main() {
   
   const directions = [{"text":"up","image":"up.svg"},{"text":"down","image":"down.svg"},{"text":"left","image":"left.svg"},
   {"text":"right","image":"right.svg"},{"text":"forwards","image":"forwards.svg"},{"text":"backwards","image":"backwards.svg"},
-  {"text":"enter","image":"enter.svg"},{"text":"exit","image":"exit.svg"},]
+  {"text":"enter","image":"enter.svg"},{"text":"exit","image":"exit.svg"}]
 
-  const feelings = [{"text":"happy","image":"happy_man.svg"},{"text":"sad","image":"sad_man.svg"},{"text":"excited","image":"excited_man.svg"},
-  {"text":"fine","image":"face_neutral_3.svg"},{"text":"surprised","image":"surprised_man.svg"},{"text":"worried","image":"worried_man.svg"}]
+  const feelings = [{"text":"good","image":"good.svg"},{"text":"bad","image":"bad.svg"},{"text":"great","image":"great.svg"},{"text":"happy","image":"happy_man.svg"},{"text":"sad","image":"sad_man.svg"},
+  {"text":"fine","image":"face_neutral_3.svg"},{"text":"surprised","image":"surprised_man.svg"},{"text":"worried","image":"worried_man.svg"},{"text":"excited","image":"excited_man.svg"},
+  {"text":"sick","image":"sick.svg"},{"text":"tired","image":"to_sleep.svg"},{"text":"mad","image":"angry.svg"},{"text":"scared","image":"scared.png"}]
 
   const meals = [{"text":"meal","image":"meal.svg"},{"text":"pizza","image":"pizza.svg"},{"text":"sandwich","image":"sandwich.svg"},
   {"text":"pasta","image":"pasta.svg"}, {"text":"steak","image":"steak.svg"},{"text":"nuggets","image":"chicken_nuggets.svg"},
@@ -42,9 +43,10 @@ function Main() {
   const fruit = [{"text":"fruit","image":"fruit.svg"},{"text":"apple","image":"apple.svg"}, {"text":"banana","image":"banana.svg"},
   {"text":"cherry","image":"cherry.svg"}, {"text":"grapes","image":"grapes.svg"}, {"text":"orange","image":"orange.svg"}, {"text":"peach","image":"peach.svg"},
   {"text":"pear","image":"pear.svg"},{"text":"strawberry","image":"strawberry.svg"}, {"text":"melon","image":"melon.svg"}, {"text":"lemon","image":"lemon.svg"},
-  {"text":"lime","image":"lime.svg"}, {"text":"kiwi","image":"kiwi.svg"}, {"text":"watermelon","image":"watermelon.svg"}]
+  {"text":"lime","image":"lime.svg"}, {"text":"kiwi","image":"kiwi.svg"}, {"text":"watermelon","image":"watermelon.svg"},{"text":"full","image":"full.png"},
+  {"text":"empty","image":"empty.png"},{"text":"loud","image":"loud.svg"},{"text":"quiet","image":"quiet.svg"},{"text":"fast","image":"fast.jpg"},{"text":"slow","image":"slow.png"}]
 
-  const describe = []
+
 
   const animals = [{"text":"bird","image":"bird.svg"},{"text":"cat","image":"cat.svg"},{"text":"dog","image":"dog.svg"},{"text":"fish","image":"fish.svg"},
   {"text":"dolphin","image":"dolphin.svg"},{"text":"bear","image":"bear.svg"},{"text":"gorilla","image":"gorilla.svg"},{"text":"cow","image":"cow.svg"},
@@ -83,15 +85,13 @@ function Main() {
   {"text":"breakfast","image":"breakfast.svg","folder": breakfast, "mute":true},{"text":"lunch","image":"lunch.svg"},{"text":"dinner","image":"dinner.svg"},
   {"text":"drinks","image":"drink.svg","folder": drinks, "mute":true} ]
 
-  const games = [{"text":"games","image":"to_play.svg"},{"text":"ball","image":"ball.svg"}, {"text":"video_games","image":"video_games.svg"}, {"text":"cars","image":"cars.svg"},
+  const games = [{"text":"games","image":"to_play.svg"},{"text":"ball","image":"ball.svg"}, {"text":"video games","image":"video_games.svg"}, {"text":"cars","image":"toy_car.svg"},
   {"text":"crayons","image":"crayon.svg"}, {"text":"legos","image":"lego.svg"}, {"text":"bingo","image":"bingo.svg"}, {"text":"cards","image":"playing_cards.svg"},
   {"text":"puzzle","image":"puzzle.svg"}]
 
   const health = [{"text":"medicine","image":"medicine.svg"},{"text":"cold","image":"sneeze_cold.svg"}, {"text":"toothache","image":"toothache.png"},
   {"text":"headache","image":"headache.png"}, {"text":"stomach ache","image":"stomach_ache.png"}, {"text":"fever","image":"fever.png"}, {"text":"soar throat","image":"soar_throat.png"},
-  {"text":"sick","image":"sick.png"}]
-
-  const holidays = []
+  {"text":"sick","image":"sick.svg"}]
 
   const hygiene = []
 
@@ -102,47 +102,63 @@ function Main() {
 
   const nature = []
 
-  const party = []
-
-  const places = []
+  const places = [{"text":"bathroom","image":"toilet.svg"},{"text":"bed","image":"bed.svg"}, {"text":"home","image":"house.svg"},{"text":"doctor","image":"doctor.svg"},
+  {"text":"for a walk","image":"to_walk.svg"}, {"text":"outside","image":"to_go_outside.svg"}, {"text":"theme park","image":"theme_park.svg"}, {"text":"skate park","image":"skate_park.svg"},
+  {"text":"picnic","image":"picnic.svg"}, {"text":"pool","image":"to_swim.svg"}, {"text":"store","image":"shop.svg"}, {"text":"work","image":"to_work.svg"}, {"text":"school","image":"school.svg"},
+  {"text":"bank","image":"bank.svg"}, {"text":"church","image":"church.svg"}, {"text":"camp","image":"to_camp.svg"}, {"text":"bowling","image":"bowling.svg"},
+  {"text":"beach","image":"beach.svg"}, {"text":"bus","image":"bus.svg"}, {"text":"class","image":"class_room.svg"}]
 
   const reading = []
 
   const school = []
 
-  const sports = []
+  const sports = [{"text":"baseball","image":"baseball_game.svg"},{"text":"basketball","image":"basketball_game.svg"}, {"text":"soccer","image":"soccer.svg"},
+  {"text":"tennis","image":"tennis.svg"}, {"text":"swimming","image":"to_swim.svg"}, {"text":"golf","image":"golf.svg"}]
 
-  const technology = []
 
-  const tools = []
+  const watch = [{"text":"something else","image":"change_channel.svg"},{"text":"comedy","image":"tv_comedy.svg"},{"text":"drama","image":"tv_drama.svg"},
+  {"text":"movie","image":"movie.png"},{"text":"sports","image":"baseball_game.svg","folder": sports, "mute":true}]
 
-  const toys = []
-
-  const vehicles = []
-
-  const watch = []
-
-  const weather = []
-
-  const things = [{"text":"animals","image":"cat.svg","folder": animals, "mute":true}, {"text":"art","image":"art.svg","folder": art, "mute":true},
-  {"text":"body","image":"body.svg","folder": body, "mute":true}, {"text":"clothes","image":"clothes.svg","folder": clothes, "mute":true},
-  {"text":"containers","image":"container.svg","folder": containers, "mute":true}, {"text":"food","image":"food.svg","folder": food, "mute":true},
-  {"text":"drinks","image":"drink.svg","folder": drinks, "mute":true},{"text":"furniture","image":"furniture.svg","folder": furniture, "mute":true},
-  {"text":"games","image":"to_play.svg","folder": games, "mute":true}, {"text":"health","image":"medicine.svg","folder": health, "mute":true}]
 
   const people = [{"text":"people","image":"people.png"},{"text":"mom","image":"mom.svg"},{"text":"and","image":"and.svg"},{"text":"dad","image":"dad.png"},
   {"text":"him","image":"him.svg"},{"text":"her","image":"her.svg"}, {"text":"you","image":"you.png"},{"text":"your","image":"your.png"},{"text":"friend","image":"friend.png"},
   {"text":"teacher","image":"teacher.svg"}, {"text":"my","image":"my.png"}, {"text":"mine","image":"mine.svg"}, {"text":"they","image":"they.svg"}, {"text":"we","image":"we.png"}]
 
+  const things = [{"text":"animals","image":"cat.svg","folder": animals, "mute":true}, {"text":"art","image":"art.svg","folder": art, "mute":true},
+  {"text":"body","image":"body.svg","folder": body, "mute":true}, {"text":"clothes","image":"clothes.svg","folder": clothes, "mute":true},
+  {"text":"containers","image":"container.svg","folder": containers, "mute":true}, {"text":"food","image":"food.svg","folder": food, "mute":true},
+  {"text":"drinks","image":"drink.svg","folder": drinks, "mute":true},{"text":"furniture","image":"furniture.svg","folder": furniture, "mute":true},
+  {"text":"games","image":"to_play.svg","folder": games, "mute":true},{"text":"health","image":"medicine.svg","folder": health, "mute":true},
+  {"text":"sports","image":"baseball_game.svg","folder": sports, "mute":true},{"text":"people","image":"people.png","folder": people, "mute":true},]
+
+
+
+  const describe = [{"text":"good","image":"good.svg"},{"text":"bad","image":"bad.svg"},{"text":"more","image":"more.png"},{"text":"funny","image":"funny.svg"},
+  {"text":"hot","image":"hot.svg"}, {"text":"cold","image":"cold.png"},{"text":"nice","image":"nice.png"},{"text":"mean","image":"mean.svg"},{"text":"same","image":"same.svg"},
+  {"text":"different","image":"different.svg"},{"text":"mean","image":"mean.svg"},{"text":"front","image":"front.svg"},{"text":"back","image":"back_1.svg"},
+  {"text":"pretty","image":"pretty.svg"},{"text":"ugly","image":"ugly.svg"},{"text":"wet","image":"wet.svg"},{"text":"dry","image":"dry.svg"},
+  {"text":"first","image":"first.svg"},{"text":"last","image":"last.svg"},{"text":"directions","image":"across.svg","folder": directions, "mute":true},
+  {"text":"people","image":"people.png", "folder":people, "mute":true},{"text":"things","image":"things.png", "folder":things, "mute":true}]
+
   const want = [{"text":"to eat","image":"eat_to.svg", "folder":food},{"text":"to drink","image":"drink_to.svg", "folder":drinks},{"text":"to watch","image":"to_watch.png","folder":watch},
-  {"text":"people","image":"people.png", "folder":people, "mute":true},{"text":"to go","image":"to_go.png", "folder":places},{"text":"more","image":"more.png", "return":true},
-  {"text":"to go","image":"to_go.png"},{"text":"to play","image":"to_play.png"},{"text":"to listen","image":"to_listen.svg"},{"text":"to read","image":"to_read.png", "folder":reading},
-  {"text":"to","image":"to.svg"}, {"text":"it","image":"it.svg"}, {"text":"the","image":"the.svg"}, {"text":"that","image":"that.svg"},{"text":"things","image":"things.png", "folder":things, "mute":true}]
+  {"text":"people","image":"people.png", "folder":people, "mute":true},{"text":"to go","image":"to_go.png","folder":places, "mute":true},{"text":"more","image":"more.png", "return":true},
+  {"text":"to go","image":"to_go.png"},{"text":"to play","image":"to_play.png","folder": games},{"text":"to listen","image":"to_listen.svg"},{"text":"to read","image":"to_read.png", "folder":reading},
+  {"text":"to","image":"to.svg"}, {"text":"it","image":"it.svg"}, {"text":"the","image":"the.svg"}]
+
+  const actions = [{"text":"to","image":"to.svg"},{"text":"feel","image":"feelings.svg","folder":feelings},{"text":"want","image":"i_want.svg","folder":want},{"text":"eat","image":"eat_to.svg","folder":food},
+  {"text":"drink","image":"drink_to.svg","folder":drinks},{"text":"come","image":"to_go.png","folder":places},{"text":"get","image":"to_get.svg"},{"text":"go","image":"to_go.svg"},
+  {"text":"help","image":"to_help.svg"},{"text":"play","image":"to_play.svg"},{"text":"read","image":"to_read.png"},{"text":"swim","image":"to_swim.svg"},
+  {"text":"walk","image":"to_walk.svg"},{"text":"work","image":"to_work.svg"},{"text":"cook","image":"to_cook.svg","folder":food}]
+
+  const does = [{"text":"does","image":"do.png"},{"text":"don't","image":"dont.svg"},{"text":"the","image":"the.svg","return":true},{"text":"he","image":"him.svg","folder":actions},
+  {"text":"she","image":"her.svg","folder":actions},{"text":"you","image":"you.png","folder":actions},{"text":"your","image":"your.png","return":true},
+  {"text":"they","image":"they.svg","folder":actions}, {"text":"we","image":"we.png","folder":actions}]
 
   const basic_front_page = [{"text":"hello","image":"hello.svg"},{"text":"yes","image":"correct.svg"}, {"text":"no","image":"mistake_no_wrong.svg"},
-  {"text":"I am","image":"i_am.png"}, {"text":"I want","image":"i_want.svg", "folder":want}, {"text":"I need","image":"need.png"},{"text":"I"}, 
-  {"text":"I like","image":"i_like.svg"}, {"text":"questions","image":"why.svg", "folder":questions, "mute":true}, {"text":"directions","image":"across.svg", "folder":directions, "mute":true}, 
-  {"text":"feelings","image":"excited_man.svg", "folder":feelings}, {"text":"people","image":"people.png", "folder":people, "mute":true},{"text":"things","image":"things.png", "folder":things, "mute":true}]
+  {"text":"I am","image":"i_am.png"}, {"text":"I want","image":"i_want.svg","folder":want}, {"text":"I need","image":"need.png"},{"text":"I","image":"I.png","folder":actions}, 
+  {"text":"I like","image":"i_like.svg"}, {"text":"do","image":"do.png", "folder":does},{"text":"questions","image":"why.svg","folder":questions, "mute":true}, {"text":"directions","image":"across.svg","folder":directions, "mute":true}, 
+  {"text":"feelings","image":"feelings.svg","folder":feelings, "mute":true}, {"text":"people","image":"people.png","folder":people, "mute":true},{"text":"things","image":"things.png","folder":things, "mute":true},
+  {"text":"describe","image":"rainbow.svg","folder":describe, "mute":true},{"text":"actions","image":"to_walk.svg","folder":actions, "mute":true}]
 
   const front_page = basic_front_page.concat()
 
