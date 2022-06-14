@@ -12,7 +12,7 @@ function App() {
 
         <ThemeProvider theme={theme.light}>
         <CssBaseline /> 
-
+        <Layout/>
         <Router>
           <Switch>
             <Route exact path="/" component={Main} />

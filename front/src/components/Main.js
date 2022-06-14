@@ -106,7 +106,7 @@ function Main() {
   {"text":"for a walk","image":"to_walk.svg"}, {"text":"outside","image":"to_go_outside.svg"}, {"text":"theme park","image":"theme_park.svg"}, {"text":"skate park","image":"skate_park.svg"},
   {"text":"picnic","image":"picnic.svg"}, {"text":"pool","image":"to_swim.svg"}, {"text":"store","image":"shop.svg"}, {"text":"work","image":"to_work.svg"}, {"text":"school","image":"school.svg"},
   {"text":"bank","image":"bank.svg"}, {"text":"church","image":"church.svg"}, {"text":"camp","image":"to_camp.svg"}, {"text":"bowling","image":"bowling.svg"},
-  {"text":"beach","image":"beach.svg"}, {"text":"bus","image":"bus.svg"}, {"text":"class","image":"class_room.svg"}]
+  {"text":"beach","image":"beach.svg"}, {"text":"bus","image":"bus.svg"}, {"text":"class","image":"class_room.svg"}, {"text":"directions","image":"across.svg","folder": directions, "mute":true}]
 
   const reading = []
 
@@ -141,7 +141,7 @@ function Main() {
   {"text":"people","image":"people.png", "folder":people, "mute":true},{"text":"things","image":"things.png", "folder":things, "mute":true}]
 
   const want = [{"text":"to eat","image":"eat_to.svg", "folder":food},{"text":"to drink","image":"drink_to.svg", "folder":drinks},{"text":"to watch","image":"to_watch.png","folder":watch},
-  {"text":"people","image":"people.png", "folder":people, "mute":true},{"text":"to go","image":"to_go.png","folder":places, "mute":true},{"text":"more","image":"more.png", "return":true},
+  {"text":"people","image":"people.png", "folder":people, "mute":true},{"text":"to go","image":"to_go.png","folder":places},{"text":"more","image":"more.png", "return":true},
   {"text":"to go","image":"to_go.png"},{"text":"to play","image":"to_play.png","folder": games},{"text":"to listen","image":"to_listen.svg"},{"text":"to read","image":"to_read.png", "folder":reading},
   {"text":"to","image":"to.svg"}, {"text":"it","image":"it.svg"}, {"text":"the","image":"the.svg"}]
 
@@ -260,7 +260,7 @@ function Main() {
 
      
 
-        <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+        <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 8, sm: 8, md: 12 }}>
       {cards.map((item) => display(item))}
         </Grid>
 
