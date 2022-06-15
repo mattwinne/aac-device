@@ -3,7 +3,7 @@ import React from "react";
 import theme from "./styles";
 
 export default function Layout() {
-  const appTheme = theme.light
+  const appTheme = theme.light;
 
   return (
     <>

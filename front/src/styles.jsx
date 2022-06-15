@@ -72,8 +72,7 @@ export const components = {
     },
   },
   MuiContainer: {
-    defaultProps: {
-    },
+    defaultProps: {},
   },
   MuiToolbar: {
     defaultProps: {
@@ -86,7 +85,7 @@ export const components = {
   MuiTextField: {
     defaultProps: {
       sx: {
-        minWidth:"800px",
+        minWidth: "800px",
         display: "flex",
         backgroundColor: "primary.light",
         input: { color: "txt" },
@@ -95,41 +94,32 @@ export const components = {
     },
   },
   MuiCard: {
-    defaultProps: {
-
-    }
+    defaultProps: {},
   },
   MuiCardGrid: {
     defaultProps: {
-      sx: {
-        
-      }
+      sx: {},
     },
   },
 
   MuiCardContent: {
     defaultProps: {
-      sx: {
-
-      }
+      sx: {},
     },
   },
   MuiCardMedia: {
     defaultProps: {
-      component: "img"
-      
-      
+      component: "img",
     },
   },
 
   MuiBox: {
-    defaultProps: {
-    },
+    defaultProps: {},
   },
   MuiTypography: {
     defaultProps: {
       color: "txt",
-      variant:"p"
+      variant: "p",
     },
   },
 };
