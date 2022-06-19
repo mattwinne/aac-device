@@ -3,43 +3,40 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@mui/material": "^5.6.1",
-    "@mui/icons-material": "^5.6.1",
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
+    "@mui/icons-material": "^5.6.1",
+    "@mui/material": "^5.6.1",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
+    "use-long-press": "^2.0.2",
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
-    "eslint": "^8.11.0",
-    "@babel/eslint-parser": "^7.17.0",
-    "@babel/preset-react": "^7.16.7",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.29.3",
+    "eslint-plugin-lodash": "^7.4.0",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-react-hooks": "^4.3.0",
     "eslint-plugin-ternaries": "^1.1.0",
-    "eslint-plugin-lodash": "^7.4.0",
-    "babel-plugin-lodash":"^3.3.4",
     "eslint-plugin-sort-imports-es6-autofix": "^0.6.0",
     "prettier": "^2.5.1"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start-nl": "DISABLE_ESLINT_PLUGIN=true react-scripts start",
+    "build": "DISABLE_ESLINT_PLUGIN=true react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "../node_modules/.bin/eslint 'src/**/*.+(js|jsx|json|css|md|html)' && echo Linting complete...",
-    "lint-fix": "../node_modules/.bin/eslint 'src/**/*.+(js|jsx|json|css|md|html)' --fix && echo Linting complete..."
+    "lint": "./node_modules/.bin/eslint 'src/**/*.+(js|jsx|json|css|md|html)' && echo Linting complete...",
+    "lint-fix": "./node_modules/.bin/eslint 'src/**/*.+(js|jsx|json|css|md|html)' --fix && echo Linting complete..."
   },
   "eslintConfig": {
     "extends": [

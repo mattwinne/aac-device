@@ -13,6 +13,7 @@ export default function Layout() {
       />
       <div
         style={{
+          position: "absolute",
           backgroundColor: appTheme.palette.bg.main,
           top: "0px",
           bottom: "0px",

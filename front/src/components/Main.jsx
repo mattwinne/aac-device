@@ -5,19 +5,22 @@ import {
   CardContent,
   CardMedia,
   Container,
+  FilledInput,
+  FormControl,
   Grid,
   IconButton,
   TextField,
   Typography,
 } from "@mui/material";
+import { useLongPress } from "use-long-press";
+import ArrowBackIos from "@mui/icons-material/ArrowBackIos";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import BackspaceIcon from "@mui/icons-material/Backspace";
+import HomeIcon from "@mui/icons-material/Home";
+import PlayCircleIcon from "@mui/icons-material/PlayCircle";
 import React, { useState } from "react";
 
 function Main() {
-  const synth = window.speechSynthesis;
-
-  const [text, setText] = useState("");
-
   const questions = [
     { text: "how", image: "how.svg" },
     { text: "what", image: "what.svg" },
@@ -500,8 +503,15 @@ function Main() {
     { text: "actions", image: "to_walk.svg", folder: actions, mute: true },
   ];
 
+  const synth = window.speechSynthesis;
+
+  const [text, setText] = useState("");
   const [cards, setCards] = useState(frontPage);
   const [prevCards, setPrevCards] = useState(cards);
+
+  const resetText = useLongPress(() => {
+    setText("");
+  });
 
   const speak = (item) => {
     if (synth.speaking) {
@@ -535,7 +545,7 @@ function Main() {
   const displayImage = (item) => {
     return (
       <>
-        <CardMedia image={`${process.env.PUBLIC_URL}./symbols/${item.image}`} />
+        <CardMedia image={`${process.env.PUBLIC_URL}/symbols/${item.image}`} />
         <CardContent>
           <Typography>{item.text}</Typography>
         </CardContent>
@@ -559,7 +569,7 @@ function Main() {
   const display = (item) => {
     const color = item.folder ? "secondary.light" : "primary.light";
     return (
-      <Grid item xs={2}>
+      <Grid item xs={2} key={item.text}>
         <Card sx={{ backgroundColor: color }}>
           <CardActionArea onClick={() => select(item)}>
             {item.image ? displayImage(item) : displayText(item.text)}
@@ -580,37 +590,69 @@ function Main() {
   };
 
   return (
-    <Container>
-      <Grid container>
-        <Grid item>
-          <TextField value={text} onChange={(e) => setText(e.target.value)} />
-        </Grid>
-
-        <Grid item>
-          <IconButton onClick={() => removeLastWord(text)}>
-            <BackspaceIcon
+    <>
+      <Grid
+        container
+        position="relative"
+        backgroundColor="tertiary.light"
+        justifyContent="center"
+        alignItems="center"
+        marginBottom="10px"
+        spacing={{ xs: 1, md: 1 }}
+        columns={{ xs: 8, sm: 8, md: 12 }}
+      >
+        <Grid item alignItems="flex-start" justify="flex-start">
+          <IconButton onClick={() => setCards(prevCards)}>
+            <ArrowBackIosIcon
               fontSize="large"
               color="theme.primary.light"
-              sx={{ height: "50px", marginLeft: "5px" }}
+              sx={{ height: "50px" }}
+            />
+          </IconButton>
+          <IconButton onClick={() => setCards(frontPage)}>
+            <HomeIcon
+              fontSize="large"
+              color="theme.primary.light"
+              sx={{ height: "50px" }}
             />
           </IconButton>
         </Grid>
-        <Grid item>
-          <Button onClick={() => setCards(prevCards)}>Back</Button>
-          <Button onClick={() => speak(text)}>Play</Button>
-          <Button onClick={() => setText("")}>Reset</Button>
-          <Button onClick={() => setCards(frontPage)}>Home</Button>
+        <Grid item md sm xs>
+          <FormControl fullWidth>
+            <TextField
+              multiline
+              value={text}
+              onChange={(e) => setText(e.target.value)}
+            />
+          </FormControl>
+        </Grid>
+        <Grid item alignItems="flex-end" justify="flex-start">
+          <IconButton {...resetText()} onClick={() => removeLastWord(text)}>
+            <BackspaceIcon
+              fontSize="large"
+              color="theme.primary.light"
+              sx={{ height: "50px" }}
+            />
+          </IconButton>
+          <IconButton onClick={() => speak(text)}>
+            <PlayCircleIcon
+              fontSize="large"
+              color="theme.primary.light"
+              sx={{ height: "50px" }}
+            />
+          </IconButton>
         </Grid>
       </Grid>
 
       <Grid
+        position="relative"
         container
-        spacing={{ xs: 2, md: 3 }}
+        spacing={{ xs: 1, md: 1 }}
         columns={{ xs: 8, sm: 8, md: 12 }}
       >
         {cards.map((item) => display(item))}
       </Grid>
-    </Container>
+    </>
   );
 }
 

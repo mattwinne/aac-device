@@ -1,9 +1,12 @@
 import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 
 const Colors = {
-  primary: "#1980E9",
-  primary_light: "#1980e940",
-  secondary: "#FECCC5",
+  primary: "#70D6FF",
+  primaryLight: "#99E2FF",
+  secondary: "#FF70A6",
+  secondaryLight: "#FFADCD",
+  tertiary: "#FFD670",
+  tertiaryLight: "#FFE299",
   success: "#4CAF50",
   info: "#00a2ff",
   danger: "#FF5722",
@@ -21,20 +24,26 @@ const Colors = {
   /// ////////////
   white: "#fff",
   black: "#000",
-  background: "#b2ebf2",
+  background: "#E9FF70",
+  backgroundLight: "#F0FF99",
 };
 
 export const lightPalette = {
   primary: {
     main: Colors.primary,
-    light: Colors.primary_light,
+    light: Colors.primaryLight,
   },
   secondary: {
     main: Colors.secondary,
+    light: Colors.secondaryLight,
+  },
+  tertiary: {
+    main: Colors.tertiary,
+    light: Colors.tertiaryLight,
   },
   bg: {
-    main: Colors.white,
-    light: Colors.light,
+    main: Colors.background,
+    light: Colors.backgroundLight,
   },
   colors: Colors,
   txt: Colors.black,
@@ -43,7 +52,7 @@ export const lightPalette = {
 export const darkPalette = {
   primary: {
     main: Colors.primary,
-    light: Colors.primary_light,
+    light: Colors.primaryLight,
   },
   secondary: {
     main: Colors.black,
@@ -84,28 +93,27 @@ export const components = {
   },
   MuiTextField: {
     defaultProps: {
+      variant: "outlined",
+
       sx: {
-        minWidth: "800px",
-        display: "flex",
-        backgroundColor: "primary.light",
+        backgroundColor: "white",
         input: { color: "txt" },
         label: { color: "txt" },
       },
     },
   },
+  MuiGrid: {
+    defaultProps: {},
+  },
   MuiCard: {
     defaultProps: {},
   },
   MuiCardGrid: {
-    defaultProps: {
-      sx: {},
-    },
+    defaultProps: {},
   },
 
   MuiCardContent: {
-    defaultProps: {
-      sx: {},
-    },
+    defaultProps: {},
   },
   MuiCardMedia: {
     defaultProps: {
@@ -125,12 +133,18 @@ export const components = {
 };
 
 const darkTheme = createTheme({
+  root: {
+    flexGrow: 1,
+  },
   palette: darkPalette,
 
   components,
 });
 
 const atheme = createTheme({
+  root: {
+    flexGrow: 1,
+  },
   palette: lightPalette,
 
   components,
