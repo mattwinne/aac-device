@@ -1,11 +1,8 @@
 import {
-  Button,
   Card,
   CardActionArea,
   CardContent,
   CardMedia,
-  Container,
-  FilledInput,
   FormControl,
   Grid,
   IconButton,
@@ -13,7 +10,6 @@ import {
   Typography,
 } from "@mui/material";
 import { useLongPress } from "use-long-press";
-import ArrowBackIos from "@mui/icons-material/ArrowBackIos";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import BackspaceIcon from "@mui/icons-material/Backspace";
 import HomeIcon from "@mui/icons-material/Home";
@@ -144,12 +140,6 @@ function Main() {
     { text: "lime", image: "lime.svg" },
     { text: "kiwi", image: "kiwi.svg" },
     { text: "watermelon", image: "watermelon.svg" },
-    { text: "full", image: "full.png" },
-    { text: "empty", image: "empty.png" },
-    { text: "loud", image: "loud.svg" },
-    { text: "quiet", image: "quiet.svg" },
-    { text: "fast", image: "fast.jpg" },
-    { text: "slow", image: "slow.png" },
   ];
 
   const animals = [
@@ -424,7 +414,6 @@ function Main() {
     { text: "mean", image: "mean.svg" },
     { text: "same", image: "same.svg" },
     { text: "different", image: "different.svg" },
-    { text: "mean", image: "mean.svg" },
     { text: "front", image: "front.svg" },
     { text: "back", image: "back_1.svg" },
     { text: "pretty", image: "pretty.svg" },
@@ -433,6 +422,12 @@ function Main() {
     { text: "dry", image: "dry.svg" },
     { text: "first", image: "first.svg" },
     { text: "last", image: "last.svg" },
+    { text: "full", image: "full.png" },
+    { text: "empty", image: "empty.png" },
+    { text: "loud", image: "loud.svg" },
+    { text: "quiet", image: "quiet.svg" },
+    { text: "fast", image: "fast.jpg" },
+    { text: "slow", image: "slow.png" },
     { text: "directions", image: "across.svg", folder: directions, mute: true },
     { text: "people", image: "people.png", folder: people, mute: true },
     { text: "things", image: "things.png", folder: things, mute: true },
@@ -445,7 +440,6 @@ function Main() {
     { text: "people", image: "people.png", folder: people, mute: true },
     { text: "to go", image: "to_go.png", folder: places },
     { text: "more", image: "more.png", return: true },
-    { text: "to go", image: "to_go.png" },
     { text: "to play", image: "to_play.png", folder: games },
     { text: "to listen", image: "to_listen.svg" },
     { text: "to read", image: "to_read.png", folder: reading },
@@ -546,9 +540,9 @@ function Main() {
     return (
       <>
         <CardMedia image={`${process.env.PUBLIC_URL}/symbols/${item.image}`} />
-        <CardContent>
-          <Typography>{item.text}</Typography>
-        </CardContent>
+        <Typography sx={{ position: "relative" }} align="center" variant="h4">
+          {item.text}
+        </Typography>
       </>
     );
   };
@@ -588,7 +582,6 @@ function Main() {
 
     setText(str.substring(0, lastIndexOfSpace));
   };
-
   return (
     <>
       <Grid
@@ -643,12 +636,11 @@ function Main() {
           </IconButton>
         </Grid>
       </Grid>
-
       <Grid
-        position="relative"
         container
         spacing={{ xs: 1, md: 1 }}
-        columns={{ xs: 8, sm: 8, md: 12 }}
+        columns={{ xs: 6, sm: 8, md: 12 }}
+        sx={{backgroundColor:"bg.main",position:"absolute"}}
       >
         {cards.map((item) => display(item))}
       </Grid>
