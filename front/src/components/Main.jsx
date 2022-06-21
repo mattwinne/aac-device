@@ -519,8 +519,7 @@ function Main() {
   };
 
   const select = (item) => {
-    if (item.mute) {
-    } else {
+    if (!item.mute) {
       setText(`${text} ${item.text}`);
       speak(item.text);
     }
@@ -640,7 +639,7 @@ function Main() {
         container
         spacing={{ xs: 1, md: 1 }}
         columns={{ xs: 6, sm: 8, md: 12 }}
-        sx={{backgroundColor:"bg.main",position:"absolute"}}
+        sx={{ backgroundColor: "bg.main", position: "absolute" }}
       >
         {cards.map((item) => display(item))}
       </Grid>
