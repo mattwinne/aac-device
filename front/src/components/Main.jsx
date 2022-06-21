@@ -509,7 +509,7 @@ function Main() {
 
   const speak = (item) => {
     if (synth.speaking) {
-      // return;
+      // return; prevents button mashing
     }
     if (item !== "") {
       const speakText = new SpeechSynthesisUtterance(item);
