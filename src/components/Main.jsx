@@ -538,7 +538,7 @@ function Main() {
   const displayImage = (item) => {
     return (
       <>
-        <CardMedia image={`${process.env.PUBLIC_URL}/symbols/${item.image}`} />
+        <CardMedia image={require(`../assets/symbols/${item.image}`)} />
         <Typography sx={{ position: "relative" }} align="center" variant="h4">
           {item.text}
         </Typography>
