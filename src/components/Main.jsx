@@ -3,6 +3,7 @@ import {
   CardActionArea,
   CardContent,
   CardMedia,
+  CircularProgress,
   FormControl,
   Grid,
   IconButton,
@@ -14,7 +15,7 @@ import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import BackspaceIcon from "@mui/icons-material/Backspace";
 import HomeIcon from "@mui/icons-material/Home";
 import PlayCircleIcon from "@mui/icons-material/PlayCircle";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 function Main() {
   const questions = [
@@ -502,10 +503,32 @@ function Main() {
   const [text, setText] = useState("");
   const [cards, setCards] = useState(frontPage);
   const [prevCards, setPrevCards] = useState(cards);
+  const [isLoading, setIsLoading] = useState(true);
 
   const resetText = useLongPress(() => {
     setText("");
   });
+
+  const cacheImages = async (srcArray, firstIteration) => {
+    const promises = await srcArray.map((src) => {
+      if (firstIteration && src.folder) {
+        cacheImages(src.folder, false);
+      }
+      return new Promise(function (resolve, reject) {
+        const img = new Image();
+        img.src = require(`../assets/symbols/${src.image}`);
+        img.onload = resolve();
+        img.onerror = reject();
+      });
+    });
+
+    await Promise.all(promises);
+
+    setIsLoading(false);
+  };
+  useEffect(() => {
+    cacheImages(cards, true);
+  }, [cards]);
 
   const speak = (item) => {
     if (synth.speaking) {
