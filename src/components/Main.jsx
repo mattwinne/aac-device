@@ -634,6 +634,7 @@ function Main() {
         <Grid item md sm xs>
           <FormControl fullWidth>
             <TextField
+              label=""
               multiline
               value={text}
               onChange={(e) => setText(e.target.value)}
