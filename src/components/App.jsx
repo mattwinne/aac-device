@@ -1,4 +1,5 @@
-import { CssBaseline, ThemeProvider, Container } from "@mui/material";
+import { CssBaseline } from "@mui/material";
+import { ThemeProvider } from "@mui/material/styles";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import React from "react";
 import Layout from "../layout";
@@ -9,7 +10,7 @@ function App() {
   return (
     <ThemeProvider theme={theme.light}>
       <CssBaseline />
-      <Layout/>
+      <Layout />
       <Router>
         <Switch>
           <Route exact path="/" component={Main} />
