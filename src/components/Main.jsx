@@ -3,6 +3,7 @@ import {
   CardActionArea,
   CardContent,
   CardMedia,
+  CircularProgress,
   FormControl,
   Grid,
   IconButton,
@@ -503,7 +504,6 @@ function Main() {
   const [cards, setCards] = useState(frontPage);
   const [prevCards, setPrevCards] = useState(cards);
   const [isLoading, setIsLoading] = useState(true);
-
   const resetText = useLongPress(() => {
     setText("");
   });
@@ -664,7 +664,7 @@ function Main() {
         columns={{ xs: 6, sm: 8, md: 12 }}
         sx={{ backgroundColor: "bg.main", position: "absolute" }}
       >
-        {cards.map((item) => display(item))}
+        {isLoading ? <CircularProgress /> : cards.map((item) => display(item))}
       </Grid>
     </>
   );
