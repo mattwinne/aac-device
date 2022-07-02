@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 
 module.exports = {
   entry: path.join(__dirname, "/src", "index.jsx"),
@@ -58,18 +59,11 @@ module.exports = {
         use: ["style-loader", "css-loader"],
       },
       {
-        test: /\.(gif|png|jpe?g|svg)$/,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              name: "[path][name].[ext]",
-              esModule: false,
-            },
-          },
-        ],
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        type: "asset",
       },
     ],
   },
+
   plugins: [new HtmlWebpackPlugin({ template: "./public/index.html" })],
 };
