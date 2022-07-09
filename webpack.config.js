@@ -1,5 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
   entry: path.join(__dirname, "/src", "index.jsx"),
@@ -8,6 +10,10 @@ module.exports = {
     path: path.join(__dirname, "/dist"),
     filename: "bundle.js",
   },
+  plugins: [
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({ template: "./public/index.html" }),
+  ],
   // webpack 5 comes with devServer which loads in development mode
   devServer: {
     port: 3000,
@@ -54,8 +60,8 @@ module.exports = {
         },
       },
       {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader"],
+        test: /\.s[ac]ss$/i,
+        use: ["style-loader", "css-loader", "sass-loader"],
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
@@ -63,6 +69,38 @@ module.exports = {
       },
     ],
   },
-
-  plugins: [new HtmlWebpackPlugin({ template: "./public/index.html" })],
+  optimization: {
+    minimizer: [
+      "...",
+      new ImageMinimizerPlugin({
+        minimizer: {
+          implementation: ImageMinimizerPlugin.imageminMinify,
+          options: {
+            plugins: [
+              ["gifsicle", { interlaced: true }],
+              ["jpegtran", { progressive: true }],
+              ["optipng", { optimizationLevel: 5 }],
+              [
+                "svgo",
+                {
+                  plugins: [
+                    {
+                      name: "preset-default",
+                      params: {
+                        overrides: {
+                          inlineStyles: {
+                            onlyMatchedOnce: false,
+                          },
+                        },
+                      },
+                    },
+                  ],
+                },
+              ],
+            ],
+          },
+        },
+      }),
+    ],
+  },
 };
