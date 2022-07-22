@@ -515,7 +515,9 @@ function Main() {
       }
       return new Promise(function (resolve, reject) {
         const img = new Image();
-        img.src = require(`../assets/symbols/${src.image}`);
+        img.src = `https://res.cloudinary.com/dscty5rng/image/upload/v1658520965/aac/${src.image}`;
+        // If using local assets
+        // img.src = require(`../assets/symbols/${src.image}`);
         img.onload = resolve();
         img.onerror = reject();
       });
@@ -560,7 +562,9 @@ function Main() {
   const displayImage = (item) => {
     return (
       <>
-        <CardMedia image={require(`../assets/symbols/${item.image}`)} />
+        <CardMedia
+          image={`https://res.cloudinary.com/dscty5rng/image/upload/v1658520965/aac/${item.image}`}
+        />
         <Typography sx={{ position: "relative" }} align="center" variant="h4">
           {item.text}
         </Typography>

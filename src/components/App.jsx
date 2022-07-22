@@ -1,9 +1,9 @@
 import { CssBaseline } from "@mui/material";
-import { ThemeProvider } from "@mui/material/styles";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
-import React from "react";
+import { ThemeProvider } from "@mui/material/styles";
 import Layout from "../layout";
 import Main from "./Main";
+import React from "react";
 import theme from "../styles";
 
 function App() {
