@@ -10,7 +10,7 @@ jobs:
       - uses: actions/setup-node@v2
       - name: Install dependencies
         run: npm install
-      - name: Build site with webpack
+      - name: Lint
         run: npm run lint
 
 
