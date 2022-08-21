@@ -13,7 +13,7 @@ import HomeButton from "./HomeButton";
 import React, { useEffect, useState } from "react";
 import SpeakButton from "./SpeakButton";
 import SpeechTextField from "./SpeechTextField";
-import cacheImages from "./CacheImages";
+import cacheImages from "../cacheImages";
 import frontPage from "./ImageData";
 import speak from "./Speak";
 

@@ -3,7 +3,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import PropTypes from "prop-types";
 import React from "react";
 
-const HomeButton = ({ setCards, frontPage }) => {
+function HomeButton({ setCards, frontPage }) {
   return (
     <IconButton onClick={() => setCards(frontPage)}>
       <HomeIcon
