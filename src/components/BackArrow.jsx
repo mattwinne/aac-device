@@ -3,7 +3,7 @@ import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import PropTypes from "prop-types";
 import React from "react";
 
-function BackArrow({ setCards, prevCards }) {
+const BackArrow = ({ setCards, prevCards }) => {
   return (
     <IconButton onClick={() => setCards(prevCards)}>
       <ArrowBackIosIcon

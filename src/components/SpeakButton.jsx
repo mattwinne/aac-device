@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import React from "react";
 import speak from "./Speak";
 
-function SpeakButton({ text }) {
+const SpeakButton = ({ text }) => {
   return (
     <IconButton onClick={() => speak(text)}>
       <PlayCircleIcon

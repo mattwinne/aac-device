@@ -2,7 +2,7 @@ import { FormControl, TextField } from "@mui/material";
 import PropTypes from "prop-types";
 import React from "react";
 
-function SpeechTextField({ text, setText }) {
+const SpeechTextField = ({ text, setText }) => {
   return (
     <FormControl fullWidth>
       <TextField
