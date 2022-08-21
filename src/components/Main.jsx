@@ -4,64 +4,30 @@ import {
   CardContent,
   CardMedia,
   CircularProgress,
-  FormControl,
   Grid,
-  IconButton,
-  TextField,
   Typography,
 } from "@mui/material";
-import { useLongPress } from "use-long-press";
-import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
-import BackspaceIcon from "@mui/icons-material/Backspace";
-import HomeIcon from "@mui/icons-material/Home";
-import PlayCircleIcon from "@mui/icons-material/PlayCircle";
+import BackArrow from "./BackArrow";
+import DeleteButton from "./DeleteButton";
+import HomeButton from "./HomeButton";
 import React, { useEffect, useState } from "react";
-import { frontPage } from "./ImageData";
+import SpeakButton from "./SpeakButton";
+import SpeechTextField from "./SpeechTextField";
+import cacheImages from "./CacheImages";
+import frontPage from "./ImageData";
+import speak from "./Speak";
 
 function Main() {
-  const synth = window.speechSynthesis;
-
   const [text, setText] = useState("");
   const [cards, setCards] = useState(frontPage);
   const [prevCards, setPrevCards] = useState(cards);
   const [isLoading, setIsLoading] = useState(true);
-  const resetText = useLongPress(() => {
-    setText("");
-  });
 
-  const cacheImages = async (srcArray, firstIteration) => {
-    const promises = await srcArray.map((src) => {
-      if (firstIteration && src.folder) {
-        cacheImages(src.folder, false);
-      }
-      return new Promise((resolve, reject) => {
-        const img = new Image();
-        img.src = `https://res.cloudinary.com/dscty5rng/image/upload/v1658520965/aac/${src.image}`;
-        // If using local assets
-        // img.src = require(`../assets/symbols/${src.image}`);
-        img.onload = resolve();
-        img.onerror = reject();
-      });
-    });
-
-    await Promise.all(promises);
-
-    setIsLoading(false);
-  };
   useEffect(() => {
+    setIsLoading(true);
     cacheImages(cards, true);
+    setIsLoading(false);
   }, [cards]);
-
-  const speak = (item) => {
-    if (synth.speaking) {
-      // return; prevents button mashing
-    }
-    if (item !== "") {
-      const speakText = new SpeechSynthesisUtterance(item);
-      speakText.onend = () => {};
-      synth.speak(speakText);
-    }
-  };
 
   const select = (item) => {
     if (!item.mute) {
@@ -119,15 +85,6 @@ function Main() {
     );
   };
 
-  const removeLastWord = (str) => {
-    const lastIndexOfSpace = str.lastIndexOf(" ");
-
-    if (lastIndexOfSpace === -1) {
-      return;
-    }
-
-    setText(str.substring(0, lastIndexOfSpace));
-  };
   return (
     <>
       <Grid
@@ -141,46 +98,15 @@ function Main() {
         columns={{ xs: 8, sm: 8, md: 12 }}
       >
         <Grid item alignItems="flex-start" justify="flex-start">
-          <IconButton onClick={() => setCards(prevCards)}>
-            <ArrowBackIosIcon
-              fontSize="large"
-              color="theme.primary.light"
-              sx={{ height: "50px" }}
-            />
-          </IconButton>
-          <IconButton onClick={() => setCards(frontPage)}>
-            <HomeIcon
-              fontSize="large"
-              color="theme.primary.light"
-              sx={{ height: "50px" }}
-            />
-          </IconButton>
+          <BackArrow setCards={setCards} prevCards={prevCards} />
+          <HomeButton setCards={setCards} frontPage={frontPage} />
         </Grid>
         <Grid item md sm xs>
-          <FormControl fullWidth>
-            <TextField
-              label=""
-              multiline
-              value={text}
-              onChange={(e) => setText(e.target.value)}
-            />
-          </FormControl>
+          <SpeechTextField text={text} setText={setText} />
         </Grid>
         <Grid item alignItems="flex-end" justify="flex-start">
-          <IconButton {...resetText()} onClick={() => removeLastWord(text)}>
-            <BackspaceIcon
-              fontSize="large"
-              color="theme.primary.light"
-              sx={{ height: "50px" }}
-            />
-          </IconButton>
-          <IconButton onClick={() => speak(text)}>
-            <PlayCircleIcon
-              fontSize="large"
-              color="theme.primary.light"
-              sx={{ height: "50px" }}
-            />
-          </IconButton>
+          <DeleteButton text={text} setText={setText} />
+          <SpeakButton text={text} />
         </Grid>
       </Grid>
       <Grid

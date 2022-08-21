@@ -458,7 +458,7 @@ export const does = [
   { text: "we", image: "we.png", folder: actions },
 ];
 
-export const frontPage = [
+const frontPage = [
   { text: "hello", image: "hello.svg" },
   { text: "yes", image: "correct.svg" },
   { text: "no", image: "mistake_no_wrong.svg" },
@@ -476,3 +476,5 @@ export const frontPage = [
   { text: "describe", image: "rainbow.svg", folder: describe, mute: true },
   { text: "actions", image: "to_walk.svg", folder: actions, mute: true },
 ];
+
+export default frontPage;
