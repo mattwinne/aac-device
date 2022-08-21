@@ -2,7 +2,8 @@
   "env": {
     "browser": true,
     "commonjs": true,
-    "es6": true
+    "es6": true,
+    "jest/globals": true
   },
   "extends": [
     "eslint:recommended",
@@ -19,7 +20,8 @@
     "react-hooks",
     "ternaries",
     "lodash",
-    "sort-imports-es6-autofix"
+    "sort-imports-es6-autofix",
+    "jest"
   ],
   "rules": {
     "consistent-return": "off",
@@ -35,11 +37,15 @@
     "lodash/import-scope": "off",
     "lodash/prefer-noop": "off",
     "lodash/prefer-lodash-method": "off",
-
     "sort-imports-es6-autofix/sort-imports-es6": [2, {
       "ignoreCase": false,
       "ignoreMemberSort": false,
       "memberSyntaxSortOrder": ["none", "all", "multiple", "single"]
-    }]
+    }],
+    "jest/no-disabled-tests": "warn",
+    "jest/no-focused-tests": "error",
+    "jest/no-identical-title": "error",
+    "jest/prefer-to-have-length": "warn",
+    "jest/valid-expect": "error"
   }
 }
