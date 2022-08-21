@@ -4,7 +4,7 @@ import BackspaceIcon from "@mui/icons-material/Backspace";
 import PropTypes from "prop-types";
 import React from "react";
 
-function DeleteButton({ text, setText }) {
+const DeleteButton = ({ text, setText }) => {
   const resetText = useLongPress(() => {
     setText("");
   });
