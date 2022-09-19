@@ -2,9 +2,10 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 
 module.exports = {
-  entry: path.join(__dirname, "/src", "index.jsx"),
+  entry: path.join(__dirname, "/src", "index.tsx"),
   // Where files should be sent once they are bundled
   output: {
     path: path.join(__dirname, "/dist"),
@@ -13,6 +14,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({ template: "./public/index.html" }),
+    new ForkTsCheckerWebpackPlugin(),
   ],
   // webpack 5 comes with devServer which loads in development mode
   devServer: {
@@ -24,10 +26,10 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(js|jsx|ts|tsx)$/,
         exclude: /node_modules/,
         resolve: {
-          extensions: [".js", ".jsx"],
+          extensions: [".tsx", ".ts", ".js", ".jsx"],
         },
         use: {
           loader: "babel-loader",
@@ -35,6 +37,8 @@ module.exports = {
             plugins: [
               "@babel/plugin-syntax-dynamic-import",
               "@babel/plugin-transform-runtime",
+              "@babel/proposal-class-properties",
+              "@babel/proposal-object-rest-spread",
               "lodash",
               [
                 "babel-plugin-import",
@@ -55,7 +59,11 @@ module.exports = {
                 "icons",
               ],
             ],
-            presets: ["@babel/preset-env", "@babel/preset-react"],
+            presets: [
+              "@babel/preset-env",
+              "@babel/preset-typescript",
+              "@babel/preset-react",
+            ],
           },
         },
       },

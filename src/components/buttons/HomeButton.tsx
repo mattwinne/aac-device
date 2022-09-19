@@ -1,14 +1,17 @@
 import { IconButton } from "@mui/material";
 import HomeIcon from "@mui/icons-material/Home";
-import PropTypes from "prop-types";
 import React from "react";
 
-function HomeButton({ setCards, frontPage }) {
+type Props = {
+  setCards: React.Dispatch<React.SetStateAction<Item[]>>;
+  frontPage: Item[];
+};
+
+function HomeButton({ setCards, frontPage }: Props) {
   return (
     <IconButton onClick={() => setCards(frontPage)}>
       <HomeIcon
         fontSize="large"
-        color="theme.primary.light"
         sx={{
           height: "50px",
         }}
@@ -16,8 +19,5 @@ function HomeButton({ setCards, frontPage }) {
     </IconButton>
   );
 }
-HomeButton.propTypes = {
-  setCards: PropTypes.func.isRequired,
-  frontPage: PropTypes.array.isRequired,
-};
+
 export default HomeButton;

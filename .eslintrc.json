@@ -9,19 +9,22 @@
     "eslint:recommended",
     "airbnb",
     "plugin:lodash/recommended",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "plugin:@typescript-eslint/recommended"
   ],
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
   },
+  "parser": "@typescript-eslint/parser",
   "plugins": [
     "react",
     "react-hooks",
     "ternaries",
     "lodash",
     "sort-imports-es6-autofix",
-    "jest"
+    "jest",
+    "@typescript-eslint"
   ],
   "rules": {
     "consistent-return": "off",
@@ -46,6 +49,9 @@
     "jest/no-focused-tests": "error",
     "jest/no-identical-title": "error",
     "jest/prefer-to-have-length": "warn",
-    "jest/valid-expect": "error"
+    "jest/valid-expect": "error",
+    "react/jsx-filename-extension": [0, { "allow": "as-needed" }],
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": ["warn"]
   }
 }

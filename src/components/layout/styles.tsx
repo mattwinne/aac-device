@@ -1,5 +1,20 @@
 import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 
+declare module "@mui/material/styles/" {
+  interface ThemeOptions {
+    root: {
+      // [key: string]: any;
+      flexGrow: number;
+    };
+  }
+  interface CardMediaProps {
+    component: string;
+  }
+  interface Palette {
+    bg?: any;
+  }
+}
+
 const Colors = {
   primary: "#70D6FF",
   primaryLight: "#99E2FF",
@@ -138,7 +153,65 @@ const darkTheme = createTheme({
   },
   palette: darkPalette,
 
-  components,
+  components: {
+    MuiButton: {
+      defaultProps: {
+        variant: "contained",
+
+        size: "medium",
+        sx: {
+          backgroundColor: "primary.light",
+          color: "txt",
+          marginTop: "5px",
+          width: "160px",
+          boxShadow: "0 1px 12px rgba(0, 0, 0, 0.25)",
+          border: "1px solid rgba(255, 255, 255, 0.3)",
+        },
+      },
+    },
+    MuiContainer: {
+      defaultProps: {},
+    },
+    MuiToolbar: {
+      defaultProps: {
+        sx: {
+          backgroundColor: "primary.light",
+          color: "txt",
+        },
+      },
+    },
+    MuiTextField: {
+      defaultProps: {
+        variant: "outlined",
+
+        sx: {
+          backgroundColor: "white",
+          input: { color: "txt" },
+          label: { color: "txt" },
+        },
+      },
+    },
+    MuiGrid: {
+      defaultProps: {},
+    },
+    MuiCard: {
+      defaultProps: {},
+    },
+
+    MuiCardContent: {
+      defaultProps: {},
+    },
+    MuiCardMedia: {
+      defaultProps: {},
+    },
+
+    MuiTypography: {
+      defaultProps: {
+        color: "txt",
+        variant: "inherit",
+      },
+    },
+  },
 });
 
 const atheme = createTheme({
@@ -147,7 +220,52 @@ const atheme = createTheme({
   },
   palette: lightPalette,
 
-  components,
+  components: {
+    MuiButton: {
+      defaultProps: {
+        variant: "contained",
+
+        size: "medium",
+        sx: {
+          backgroundColor: "primary.light",
+          color: "txt",
+          marginTop: "5px",
+          width: "160px",
+          boxShadow: "0 1px 12px rgba(0, 0, 0, 0.25)",
+          border: "1px solid rgba(255, 255, 255, 0.3)",
+        },
+      },
+    },
+    MuiContainer: {
+      defaultProps: {},
+    },
+    MuiToolbar: {
+      defaultProps: {
+        sx: {
+          backgroundColor: "primary.light",
+          color: "txt",
+        },
+      },
+    },
+    MuiTextField: {
+      defaultProps: {
+        variant: "outlined",
+
+        sx: {
+          backgroundColor: "white",
+          input: { color: "txt" },
+          label: { color: "txt" },
+        },
+      },
+    },
+
+    MuiTypography: {
+      defaultProps: {
+        color: "txt",
+        variant: "inherit",
+      },
+    },
+  },
 });
 const theme = {
   light: responsiveFontSizes(atheme),

@@ -1,15 +1,17 @@
 import { IconButton } from "@mui/material";
 import PlayCircleIcon from "@mui/icons-material/PlayCircle";
-import PropTypes from "prop-types";
 import React from "react";
-import speak from "./Speak";
+import speak from "../speech/Speak";
 
-function SpeakButton({ text }) {
+type Props = {
+  text: string;
+};
+
+function SpeakButton({ text }: Props) {
   return (
     <IconButton onClick={() => speak(text)}>
       <PlayCircleIcon
         fontSize="large"
-        color="theme.primary.light"
         sx={{
           height: "50px",
         }}
@@ -17,7 +19,5 @@ function SpeakButton({ text }) {
     </IconButton>
   );
 }
-SpeakButton.propTypes = {
-  text: PropTypes.string.isRequired,
-};
+
 export default SpeakButton;

@@ -1,8 +1,12 @@
 import { FormControl, TextField } from "@mui/material";
-import PropTypes from "prop-types";
 import React from "react";
 
-function SpeechTextField({ text, setText }) {
+type Props = {
+  text: string;
+  setText: React.Dispatch<React.SetStateAction<string>>;
+};
+
+function SpeechTextField({ text, setText }: Props) {
   return (
     <FormControl fullWidth>
       <TextField
@@ -14,9 +18,5 @@ function SpeechTextField({ text, setText }) {
     </FormControl>
   );
 }
-SpeechTextField.propTypes = {
-  text: PropTypes.string.isRequired,
-  setText: PropTypes.func.isRequired,
-};
 
 export default SpeechTextField;

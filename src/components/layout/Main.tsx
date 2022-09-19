@@ -7,15 +7,15 @@ import {
   Grid,
   Typography,
 } from "@mui/material";
-import BackArrow from "./BackArrow";
-import DeleteButton from "./DeleteButton";
-import HomeButton from "./HomeButton";
 import React, { useEffect, useState } from "react";
-import SpeakButton from "./SpeakButton";
-import SpeechTextField from "./SpeechTextField";
-import cacheImages from "../cacheImages";
-import frontPage from "./ImageData";
-import speak from "./Speak";
+import BackArrow from "../buttons/BackArrow";
+import DeleteButton from "../buttons/DeleteButton";
+import HomeButton from "../buttons/HomeButton";
+import SpeakButton from "../buttons/SpeakButton";
+import SpeechTextField from "../speech/SpeechTextField";
+import cacheImages from "../images/cacheImages";
+import frontPage from "../images/ImageData";
+import speak from "../speech/Speak";
 
 function Main() {
   const [text, setText] = useState("");
@@ -29,7 +29,7 @@ function Main() {
     setIsLoading(false);
   }, [cards]);
 
-  const select = (item) => {
+  const select = (item: Item) => {
     if (!item.mute) {
       setText(`${text} ${item.text}`);
       speak(item.text);
@@ -46,10 +46,11 @@ function Main() {
     }
   };
 
-  const displayImage = (item) => {
+  const displayImage = (item: Item) => {
     return (
       <>
         <CardMedia
+          component="img"
           image={`https://res.cloudinary.com/dscty5rng/image/upload/v1658520965/aac/${item.image}`}
         />
         <Typography sx={{ position: "relative" }} align="center" variant="h4">
@@ -59,7 +60,7 @@ function Main() {
     );
   };
 
-  const displayText = (txt) => {
+  const displayText = (txt: string) => {
     return (
       <>
         <CardContent>
@@ -72,7 +73,7 @@ function Main() {
     );
   };
 
-  const display = (item) => {
+  const display = (item: Item) => {
     const cardColor = item.folder ? "secondary.light" : "primary.light";
     return (
       <Grid item xs={2} key={item.text}>
@@ -90,21 +91,21 @@ function Main() {
       <Grid
         container
         position="relative"
-        backgroundColor="tertiary.light"
         justifyContent="center"
         alignItems="center"
         marginBottom="10px"
         spacing={{ xs: 1, md: 1 }}
         columns={{ xs: 8, sm: 8, md: 12 }}
+        sx={{ backgroundColor: "tertiary.light" }}
       >
-        <Grid item alignItems="flex-start" justify="flex-start">
+        <Grid item>
           <BackArrow setCards={setCards} prevCards={prevCards} />
           <HomeButton setCards={setCards} frontPage={frontPage} />
         </Grid>
         <Grid item md sm xs>
           <SpeechTextField text={text} setText={setText} />
         </Grid>
-        <Grid item alignItems="flex-end" justify="flex-start">
+        <Grid item>
           <DeleteButton text={text} setText={setText} />
           <SpeakButton text={text} />
         </Grid>
