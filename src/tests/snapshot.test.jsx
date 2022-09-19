@@ -1,8 +1,8 @@
-import App from "../components/App";
-import React from "react";
 import { render, screen } from "@testing-library/react";
+import App from "../components/layout/App";
+import React from "react";
 
 it("renders correctly", () => {
-  const tree = render(<App />)
+  const tree = render(<App />);
   expect(tree).toMatchSnapshot();
 });
