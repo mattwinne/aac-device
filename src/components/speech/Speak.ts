@@ -1,4 +1,4 @@
-const speak = (item) => {
+const speak = (item: string) => {
   const synth = window.speechSynthesis;
   if (synth.speaking) {
     // return; prevents button mashing

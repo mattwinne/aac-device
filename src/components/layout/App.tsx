@@ -1,10 +1,10 @@
 import { CssBaseline } from "@mui/material";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import { ThemeProvider } from "@mui/material/styles";
-import Layout from "../layout";
+import Layout from "./layout";
 import Main from "./Main";
 import React from "react";
-import theme from "../styles";
+import theme from "./styles";
 
 function App() {
   return (

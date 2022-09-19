@@ -13,11 +13,10 @@ Object {
         style="position: absolute; background-color: rgb(233, 255, 112); top: 0px; bottom: 0px; width: 100%;"
       />
       <div
-        class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-spacing-md-1 css-s0klg4-MuiGrid-root"
+        class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-spacing-md-1 css-13j0ywu-MuiGrid-root"
       >
         <div
-          class="MuiGrid-root MuiGrid-item css-1c5039q-MuiGrid-root"
-          justify="flex-start"
+          class="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
         >
           <button
             class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
@@ -26,7 +25,7 @@ Object {
           >
             <svg
               aria-hidden="true"
-              class="MuiSvgIcon-root MuiSvgIcon-colorTheme.primary.light MuiSvgIcon-fontSizeLarge css-472jec-MuiSvgIcon-root"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge css-472jec-MuiSvgIcon-root"
               data-testid="ArrowBackIosIcon"
               focusable="false"
               viewBox="0 0 24 24"
@@ -46,7 +45,7 @@ Object {
           >
             <svg
               aria-hidden="true"
-              class="MuiSvgIcon-root MuiSvgIcon-colorTheme.primary.light MuiSvgIcon-fontSizeLarge css-472jec-MuiSvgIcon-root"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge css-472jec-MuiSvgIcon-root"
               data-testid="HomeIcon"
               focusable="false"
               viewBox="0 0 24 24"
@@ -104,8 +103,7 @@ Object {
           </div>
         </div>
         <div
-          class="MuiGrid-root MuiGrid-item css-1ilisvo-MuiGrid-root"
-          justify="flex-start"
+          class="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
         >
           <button
             class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
@@ -114,7 +112,7 @@ Object {
           >
             <svg
               aria-hidden="true"
-              class="MuiSvgIcon-root MuiSvgIcon-colorTheme.primary.light MuiSvgIcon-fontSizeLarge css-472jec-MuiSvgIcon-root"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge css-472jec-MuiSvgIcon-root"
               data-testid="BackspaceIcon"
               focusable="false"
               viewBox="0 0 24 24"
@@ -134,7 +132,7 @@ Object {
           >
             <svg
               aria-hidden="true"
-              class="MuiSvgIcon-root MuiSvgIcon-colorTheme.primary.light MuiSvgIcon-fontSizeLarge css-472jec-MuiSvgIcon-root"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge css-472jec-MuiSvgIcon-root"
               data-testid="PlayCircleIcon"
               focusable="false"
               viewBox="0 0 24 24"
@@ -628,11 +626,10 @@ Object {
       style="position: absolute; background-color: rgb(233, 255, 112); top: 0px; bottom: 0px; width: 100%;"
     />
     <div
-      class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-spacing-md-1 css-s0klg4-MuiGrid-root"
+      class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 MuiGrid-spacing-md-1 css-13j0ywu-MuiGrid-root"
     >
       <div
-        class="MuiGrid-root MuiGrid-item css-1c5039q-MuiGrid-root"
-        justify="flex-start"
+        class="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
       >
         <button
           class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
@@ -641,7 +638,7 @@ Object {
         >
           <svg
             aria-hidden="true"
-            class="MuiSvgIcon-root MuiSvgIcon-colorTheme.primary.light MuiSvgIcon-fontSizeLarge css-472jec-MuiSvgIcon-root"
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge css-472jec-MuiSvgIcon-root"
             data-testid="ArrowBackIosIcon"
             focusable="false"
             viewBox="0 0 24 24"
@@ -661,7 +658,7 @@ Object {
         >
           <svg
             aria-hidden="true"
-            class="MuiSvgIcon-root MuiSvgIcon-colorTheme.primary.light MuiSvgIcon-fontSizeLarge css-472jec-MuiSvgIcon-root"
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge css-472jec-MuiSvgIcon-root"
             data-testid="HomeIcon"
             focusable="false"
             viewBox="0 0 24 24"
@@ -719,8 +716,7 @@ Object {
         </div>
       </div>
       <div
-        class="MuiGrid-root MuiGrid-item css-1ilisvo-MuiGrid-root"
-        justify="flex-start"
+        class="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
       >
         <button
           class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
@@ -729,7 +725,7 @@ Object {
         >
           <svg
             aria-hidden="true"
-            class="MuiSvgIcon-root MuiSvgIcon-colorTheme.primary.light MuiSvgIcon-fontSizeLarge css-472jec-MuiSvgIcon-root"
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge css-472jec-MuiSvgIcon-root"
             data-testid="BackspaceIcon"
             focusable="false"
             viewBox="0 0 24 24"
@@ -749,7 +745,7 @@ Object {
         >
           <svg
             aria-hidden="true"
-            class="MuiSvgIcon-root MuiSvgIcon-colorTheme.primary.light MuiSvgIcon-fontSizeLarge css-472jec-MuiSvgIcon-root"
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge css-472jec-MuiSvgIcon-root"
             data-testid="PlayCircleIcon"
             focusable="false"
             viewBox="0 0 24 24"

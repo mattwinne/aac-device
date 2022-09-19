@@ -1,14 +1,17 @@
 import { IconButton } from "@mui/material";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
-import PropTypes from "prop-types";
 import React from "react";
 
-function BackArrow({ setCards, prevCards }) {
+type Props = {
+  setCards: React.Dispatch<React.SetStateAction<Item[]>>;
+  prevCards: Item[];
+};
+
+function BackArrow({ setCards, prevCards }: Props) {
   return (
     <IconButton onClick={() => setCards(prevCards)}>
       <ArrowBackIosIcon
         fontSize="large"
-        color="theme.primary.light"
         sx={{
           height: "50px",
         }}
@@ -16,9 +19,5 @@ function BackArrow({ setCards, prevCards }) {
     </IconButton>
   );
 }
-BackArrow.propTypes = {
-  setCards: PropTypes.func.isRequired,
-  prevCards: PropTypes.array.isRequired,
-};
 
 export default BackArrow;

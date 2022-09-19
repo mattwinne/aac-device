@@ -1,15 +1,19 @@
 import { IconButton } from "@mui/material";
 import { useLongPress } from "use-long-press";
 import BackspaceIcon from "@mui/icons-material/Backspace";
-import PropTypes from "prop-types";
 import React from "react";
 
-function DeleteButton({ text, setText }) {
+type Props = {
+  text: string;
+  setText: React.Dispatch<React.SetStateAction<string>>;
+};
+
+function DeleteButton({ text, setText }: Props) {
   const resetText = useLongPress(() => {
     setText("");
   });
 
-  const removeLastWord = (str) => {
+  const removeLastWord = (str: string) => {
     const lastIndexOfSpace = str.lastIndexOf(" ");
 
     if (lastIndexOfSpace === -1) {
@@ -22,7 +26,6 @@ function DeleteButton({ text, setText }) {
     <IconButton {...resetText()} onClick={() => removeLastWord(text)}>
       <BackspaceIcon
         fontSize="large"
-        color="theme.primary.light"
         sx={{
           height: "50px",
         }}
@@ -30,10 +33,5 @@ function DeleteButton({ text, setText }) {
     </IconButton>
   );
 }
-
-DeleteButton.propTypes = {
-  text: PropTypes.string.isRequired,
-  setText: PropTypes.func.isRequired,
-};
 
 export default DeleteButton;
